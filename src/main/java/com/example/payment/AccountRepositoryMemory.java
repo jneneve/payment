@@ -16,8 +16,7 @@ public class AccountRepositoryMemory implements AccountRepository {
     public Account getAccountByEmail(String email) {
         for (Account account : accounts) {
             if (account.getEmail().equals(email)) {
-                return Account.restore(account.getAccountId(), account.getName(), account.getIdentificationNumber(),
-                        account.getEmail(), account.getPassword(), account.getBaselineBalance());
+                return account;
             }
         }
         return null;
@@ -27,8 +26,7 @@ public class AccountRepositoryMemory implements AccountRepository {
     public Account getAccountByIdentificationNumber(String identificationNumber) {
         for (Account account : accounts) {
             if (account.getIdentificationNumber().equals(identificationNumber)) {
-                return Account.restore(account.getAccountId(), account.getName(), account.getIdentificationNumber(),
-                        account.getEmail(), account.getPassword(), account.getBaselineBalance());
+                return account;
             }
         }
         return null;
@@ -39,8 +37,7 @@ public class AccountRepositoryMemory implements AccountRepository {
         for (Account account : accounts) {
             String formattedAccountId = account.getAccountId().toString();
             if (formattedAccountId.equals(accountId)) {
-                return Account.restore(account.getAccountId(), account.getName(), account.getIdentificationNumber(),
-                        account.getEmail(), account.getPassword(), account.getBaselineBalance());
+                return account;
             }
         }
         return null;
